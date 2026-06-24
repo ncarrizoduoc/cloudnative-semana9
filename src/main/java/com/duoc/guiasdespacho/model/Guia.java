@@ -52,7 +52,7 @@ public class Guia implements Serializable{
     public String toString(){
         String texto = "";
         
-        texto += "ID: " + id + "\n";
+        texto += "Resumen de guia ID: " + id + "\n";
         texto += "\t" + "- Contenido: " + contenido + "\n";
         texto += "\t" + "- Direccion: " + direccion + "\n";
         texto += "\t" + "- Fecha: " + fecha + "\n";
