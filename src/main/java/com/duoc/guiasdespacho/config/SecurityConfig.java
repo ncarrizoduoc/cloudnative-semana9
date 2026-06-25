@@ -48,6 +48,7 @@ public class SecurityConfig {
         };
     }
 
+    // Metodo que extrae el rol del usuario desde el JWT y lo convierte a GrantedAuthorities
     @Bean
     public JwtAuthenticationConverter jwtAuthenticationConverter(){
         JwtGrantedAuthoritiesConverter grantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
