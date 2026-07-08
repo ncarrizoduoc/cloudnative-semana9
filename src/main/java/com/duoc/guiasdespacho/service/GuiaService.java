@@ -1,11 +1,5 @@
 package com.duoc.guiasdespacho.service;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,8 +10,6 @@ import com.duoc.guiasdespacho.dto.GuiaRequest;
 import com.duoc.guiasdespacho.mapper.GuiaRequestMapper;
 import com.duoc.guiasdespacho.model.Guia;
 import com.duoc.guiasdespacho.repository.GuiaRepository;
-
-import static com.duoc.guiasdespacho.config.CONSTANTS.*;
 
 @Service
 public class GuiaService {
