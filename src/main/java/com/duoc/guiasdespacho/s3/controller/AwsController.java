@@ -70,7 +70,7 @@ public class AwsController {
         return new ResponseEntity<>("File deleted", HttpStatus.OK);
     }
 
-    @PutMapping("/moveFile")
+    @PutMapping("/updateFile")
     public ResponseEntity<String> moveFile(@RequestParam(value = "bucketName") String bucketName,
                                             @RequestParam(value = "fileKey") String fileKey,
                                             @RequestParam(value = "fileKeyDest") String fileKeyDest){
