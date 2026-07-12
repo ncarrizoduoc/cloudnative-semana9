@@ -48,12 +48,12 @@ public class GuiaQueueController {
 
     @GetMapping("/consume")
     public ResponseEntity<String> consumirMensajeGuia(@RequestParam("bucketName") String bucketName){
-        String mensaje = consumidorService.receiveMessage();
+        String mensaje = consumidorService.receiveMessage(); // Leer mensaje desde la cola de RabbitMQ
         if (mensaje == null){
             return ResponseEntity.status(404).body("No hay mensajes en la cola.");
         }
-        Guia guia = objectMapper.readValue(mensaje, Guia.class);
-        String key = awsService.subirGuia(bucketName, guia);
+        Guia guia = objectMapper.readValue(mensaje, Guia.class); // Convertir el mensaje a Guia
+        String key = awsService.subirGuia(bucketName, guia); // Subir el resumen de la guia a S3
         return ResponseEntity.ok("Se ha guardado la guia en S3 con el key: " + key + "\n" + guia.toString());
             
     }
