@@ -4,7 +4,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.duoc.inscripciones.rabbitmq.config.RabbitMQConfig;
 import com.rabbitmq.client.GetResponse;
 
 import static com.duoc.inscripciones.rabbitmq.config.RabbitMQConfig.*;
