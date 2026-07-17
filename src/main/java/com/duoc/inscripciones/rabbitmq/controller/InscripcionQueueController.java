@@ -39,6 +39,7 @@ public class InscripcionQueueController {
     @Autowired
     private AwsServiceImpl awsService;
 
+    // Enviar mensaje a RabbitMQ con datos de inscripcion
     @PostMapping("/produce")
     public ResponseEntity<String> enviarMesajeInscripcion(@Valid @RequestBody InscripcionRequest request){
         Inscripcion inscripcion = requestMapper.toInscripcion(request);
@@ -47,6 +48,7 @@ public class InscripcionQueueController {
         return ResponseEntity.ok("Mensaje enviado a la cola: " + mensaje);
     }
 
+    // Consumir mensaje de RabbitMQ y subir resumen de inscripcion a S3
     @GetMapping("/consume")
     public ResponseEntity<String> consumirMensajeInscripcion(@RequestParam("bucketName") String bucketName){
         String mensaje = consumidorService.receiveMessage(); // Leer mensaje desde la cola de RabbitMQ
